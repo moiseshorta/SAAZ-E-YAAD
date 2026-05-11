@@ -90,9 +90,9 @@ npm start  # Run in development mode
 #### 1. Preprocess Audio Data
 
 ```bash
-python preprocess-clap-v4-xl.py \
+python preprocess.py \
   --audio_dir /path/to/audio \
-  --output_dir preprocessed_v4 \
+  --output_dir preprocessed \
   --sample_rate 48000 \
   --clap_window_seconds 5.0 \
   --clap_hop_seconds 5.0
@@ -101,9 +101,9 @@ python preprocess-clap-v4-xl.py \
 #### 2. Train Model
 
 ```bash
-python train-clap-v4-warmup-xl-cfg.py \
-  --preprocessed_dir preprocessed_v4 \
-  --checkpoint_dir checkpoints_v4 \
+python train.py \
+  --preprocessed_dir preprocessed \
+  --checkpoint_dir checkpoints \
   --batch_size 32 \
   --lr 1e-4 \
   --warmup_steps 4000 \
@@ -115,9 +115,9 @@ python train-clap-v4-warmup-xl-cfg.py \
 #### 3. Generate Audio
 
 ```bash
-python generate-clap-v4-xl-warmup-val-cfg.py \
-  --checkpoint checkpoints_v4/checkpoint_50000.pt \
-  --output_dir inference_samples_v4 \
+python generate.py \
+  --checkpoint checkpoints/checkpoint_50000.pt \
+  --output_dir inference_samples \
   --num_samples 4 \
   --gen_seconds 30.5 \
   --cfg_scale 5.0 \
@@ -128,8 +128,8 @@ python generate-clap-v4-xl-warmup-val-cfg.py \
 #### 4. Export to TorchScript
 
 ```bash
-python export-clap-v4-xl.py \
-  --checkpoint checkpoints_v4/checkpoint_50000.pt \
+python export.py \
+  --checkpoint checkpoints/checkpoint_50000.pt \
   --output ts-models/saaz-e-yaad_full.ts
 ```
 
@@ -181,7 +181,7 @@ The project includes several pre-trained models:
 
 ### Training Parameters
 
-Key training hyperparameters (see `train-clap-v4-warmup-xl-cfg.py`):
+Key training hyperparameters (see `train.py`):
 
 - `--batch_size`: Batch size (default: 32)
 - `--lr`: Learning rate (default: 1e-4)
@@ -193,7 +193,7 @@ Key training hyperparameters (see `train-clap-v4-warmup-xl-cfg.py`):
 
 ### Generation Parameters
 
-Key generation parameters (see `generate-clap-v4-xl-warmup-val-cfg.py`):
+Key generation parameters (see `generate.py`):
 
 - `--cfg_scale`: Classifier-free guidance scale (default: 5.0)
 - `--temperature`: Sampling temperature (default: 1.0, max: 1.25)
@@ -259,10 +259,11 @@ The Python backend uses PyInstaller with:
 ```
 cam/
 ├── cam_model_v4.py              # Shared v4-xl model architecture
-├── train-clap-v4-warmup-xl-cfg.py    # Training script
-├── generate-clap-v4-xl-warmup-val-cfg.py  # Generation script
-├── export-clap-v4-xl.py         # TorchScript export
-├── preprocess-clap-v4-xl.py     # Audio preprocessing
+├── preprocess.py               # Audio preprocessing
+├── train.py                     # Training script
+├── generate.py                  # Generation script
+├── export.py                    # TorchScript export
+├── generate-ts.py               # TorchScript generation
 ├── electron-gui/                # Electron GUI application
 │   ├── main.js                  # Electron main process
 │   ├── renderer.js              # Renderer process
@@ -276,8 +277,8 @@ cam/
 │       ├── prepare-build.mjs    # Build preparation
 │       └── notarize.mjs         # macOS notarization
 ├── ts-models/                   # TorchScript models
-├── checkpoints_v4/              # Training checkpoints
-├── preprocessed_v4/             # Preprocessed training data
+├── checkpoints/                 # Training checkpoints
+├── preprocessed/                # Preprocessed training data
 └── requirements.txt             # Python dependencies
 ```
 
