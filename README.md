@@ -1,6 +1,6 @@
-# SONIC SHIKARA - Continuous Autoregressive Music Generation
+# Saaz-e-yaad - Continuous Autoregressive Music Generation
 
-![SONIC SHIKARA](https://img.shields.io/badge/SONIC-SHIKARA-blue)
+![Saaz-e-yaad](https://img.shields.io/badge/Saaz-e-yaad-blue)
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
 ![PyTorch](https://img.shields.io/badge/pytorch-2.2+-orange)
 ![Electron](https://img.shields.io/badge/electron-28.2+-purple)
@@ -9,7 +9,7 @@ An implementation of **Continuous Autoregressive Models with Noise Augmentation*
 
 ## 🎵 Overview
 
-SONIC SHIKARA implements the paper:
+Saaz-e-yaad implements the paper:
 
 > **Continuous Autoregressive Models with Noise Augmentation Avoid Error Accumulation**  
 > [Marco Pasini, Javier Nistal, Stefan Lattner, György Fazekas]  
@@ -130,7 +130,7 @@ python generate-clap-v4-xl-warmup-val-cfg.py \
 ```bash
 python export-clap-v4-xl.py \
   --checkpoint checkpoints_v4/checkpoint_50000.pt \
-  --output ts-models/sonic-shikara_full.ts
+  --output ts-models/saaz-e-yaad_full.ts
 ```
 
 ### Electron GUI
@@ -171,11 +171,11 @@ The build process:
 
 The project includes several pre-trained models:
 
-- **sonic-shikara_full.ts**: Full music generation model
-- **sonic-shikara_rhythm.ts**: Rhythm-focused generation
-- **sonic-shikara_rhythm-v4.ts**: Rhythm model with v4 architecture
-- **sonic-shikara_harmony.ts**: Harmony-focused generation
-- **sonic-shikara_vocals.ts**: Vocal-focused generation
+- **saaz-e-yaad_full.ts**: Full music generation model
+- **saaz-e-yaad_rhythm.ts**: Rhythm-focused generation
+- **saaz-e-yaad_rhythm-v4.ts**: Rhythm model with v4 architecture
+- **saaz-e-yaad_harmony.ts**: Harmony-focused generation
+- **saaz-e-yaad_vocals.ts**: Vocal-focused generation
 
 ## 🔧 Configuration
 
