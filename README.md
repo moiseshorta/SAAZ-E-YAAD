@@ -5,7 +5,7 @@
 ![PyTorch](https://img.shields.io/badge/pytorch-2.2+-orange)
 ![Electron](https://img.shields.io/badge/electron-28.2+-purple)
 
-An implementation of **Continuous Autoregressive Models with Noise Augmentation** for music generation, featuring a modern Electron GUI and state-of-the-art v4-xl architecture with CLAP conditioning.
+An implementation of **Continuous Autoregressive Models with Noise Augmentation** for music generation, featuring a modern Electron GUI and CLAP conditioning.
 
 ## 🎵 Overview
 
