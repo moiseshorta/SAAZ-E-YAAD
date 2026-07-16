@@ -1,15 +1,31 @@
-# Saz-e-Yaad
+# Saaz-e-Yaad
 
 ![GUI](imgs/gui.png)
-
-**Download:** [Saz-e-yaad v1](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (macOS Apple Silicon)
 
 An autoregressive music generation system based on Continuous Autoregressive Models
 (CAM) with CLAP conditioning, operating over `music2latent` audio latents. The
 repository includes the training and inference pipeline plus an Electron desktop
 application for interactive generation.
 
+**Download:** [Saz-e-yaad v1](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (macOS Apple Silicon)
+
 ## Background
+
+### Project Origin
+
+Saaz-e-yaad was developed during an Open Culture Tech Artist Residency with Lacuna, **hexorcismos**, and AIxDESIGN. Over the course of one year, we explored how to develop audio generative tools based on the melodies, rhythms, and composition of Kashmiri folk music. The project involved sourcing archives of Kashmiri folk music, training 22 audio generation models, and developing a standalone desktop application.
+
+### Dataset Provenance
+
+The training data was sourced from several Kashmiri folk music archives:
+
+- **Ravimech Studio (YouTube)**: ~1,000 most recently uploaded tracks from recordings made in Srinagar in the early 1980s. Permissions were obtained through family network connections.
+- **DD Kashir recordings**: Archived broadcasts from Facebook
+- **Family cassette collections**: Personal recordings from extended family networks
+
+The dataset was curated and subset for specific fine-tuning tasks: harmony, melody, and rhythm.
+
+### Method
 
 Implementation of:
 
@@ -22,6 +38,12 @@ sampler MLP that performs a diffusion-style denoising loop. Training injects noi
 into the latent context so the model is robust to its own prediction drift at
 inference time. Conditioning is supplied as a sequence of CLAP tokens (from audio
 or text) consumed via cross-attention.
+
+### Model Architecture
+
+- **Music2Latent** (audio encoding): ~200 million parameters
+  - https://github.com/SonyCSLParis/music2latent/
+- **Custom Continuous Autoregressive Model** (Rectified Flow + Transformer Backbone): ~180 million parameters
 
 ## Repository layout
 
@@ -119,7 +141,6 @@ python generate-ts.py \
   --ts_model ts-models/model.ts \
   --output_dir samples
 ```
-
 
 ### GUI Features
 
