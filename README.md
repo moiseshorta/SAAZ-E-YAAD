@@ -1,5 +1,7 @@
 # Saaz-e-Yaad
 
+![GUI](imgs/gui.png)
+
 An autoregressive music generation system based on Continuous Autoregressive Models
 (CAM) with CLAP conditioning, operating over `music2latent` audio latents. The
 repository includes the training and inference pipeline plus an Electron desktop
