@@ -1,4 +1,4 @@
-# Saaz-e-Yaad
+# Saz-e-Yaad
 
 ![GUI](imgs/gui.png)
 
