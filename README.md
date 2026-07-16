@@ -2,7 +2,7 @@
 
 ![GUI](imgs/gui.png)
 
-**Download:** [SONIC-SHIKARA-0.1.0-arm64.dmg](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (macOS Apple Silicon)
+**Download:** [Saz-e-yaad v1](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (macOS Apple Silicon)
 
 An autoregressive music generation system based on Continuous Autoregressive Models
 (CAM) with CLAP conditioning, operating over `music2latent` audio latents. The
