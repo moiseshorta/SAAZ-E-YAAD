@@ -120,46 +120,29 @@ python generate-ts.py \
 
 ## Electron application
 
+**Download:** [SONIC-SHIKARA-0.1.0-arm64.dmg](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (macOS Apple Silicon)
+
 `electron-gui/` contains a desktop app that wraps the TorchScript inference path.
 The main process spawns a Python backend (`backend.py`) and communicates with it
-via line-delimited JSON over stdio. The renderer provides model selection,
-audio/text conditioning, prefix continuation, streaming preview playback and a
-waveform display.
+via line-delimited JSON over stdio.
 
-### Development
+### GUI Features
 
-```bash
-cd electron-gui
-npm install
-npm start
-```
+The renderer provides a full-featured interface for interactive music generation:
 
-In development mode the renderer launches the Python backend directly. Set
-`CAM_PYTHON` to point at the desired interpreter if the default is not the one
-with your dependencies installed.
+- **Model Selection**: Choose from available TorchScript models bundled with the app
+- **Conditioning Modes**: 
+  - Text prompts for semantic guidance
+  - Audio prompts for style transfer or continuation
+  - Unconditional generation
+- **Prefix Continuation**: Upload an audio file to seed the beginning of generation
+- **Real-time Waveform Display**: Visualize the generated audio as it streams
+- **Streaming Playback**: Listen to the generation in progress without waiting for completion
+- **Parameter Controls**: Adjust CFG scale, temperature, diffusion steps, and generation length
+- **Export**: Save generated audio to WAV files
 
-### Distribution build
-
-```bash
-cd electron-gui
-npm run dist
-```
-
-This runs three steps:
-
-1. `prepare-build.mjs` — checks `build/icon.icns` and other assets.
-2. `build-backend.mjs` — runs PyInstaller against `backend.spec` to produce a
-   standalone backend executable. The script picks the Python interpreter from
-   `CAM_PYTHON`, then `CONDA_PREFIX/bin/python`, then `PYTHON`, then the system
-   `python`/`python3`. It performs a preflight import check on `librosa`,
-   `music2latent`, `transformers` and `soundfile` to avoid producing a binary
-   that fails at runtime.
-3. `electron-builder` — packages the renderer, main process and the bundled
-   backend into a macOS `.dmg` / `.zip` (other targets configurable in
-   `package.json`).
-
-TorchScript models placed in `../ts-models/` are bundled into the resulting app
-under `Contents/Resources/ts-models/`.
+The GUI is built with React and styled with modern components, providing an intuitive
+workflow for experimenting with different conditioning strategies and model configurations.
 
 ## License
 
