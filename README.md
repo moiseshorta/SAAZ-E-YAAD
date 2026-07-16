@@ -2,6 +2,8 @@
 
 ![GUI](imgs/gui.png)
 
+**Download:** [SONIC-SHIKARA-0.1.0-arm64.dmg](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (macOS Apple Silicon)
+
 An autoregressive music generation system based on Continuous Autoregressive Models
 (CAM) with CLAP conditioning, operating over `music2latent` audio latents. The
 repository includes the training and inference pipeline plus an Electron desktop
@@ -118,13 +120,6 @@ python generate-ts.py \
   --output_dir samples
 ```
 
-## Electron application
-
-**Download:** [SONIC-SHIKARA-0.1.0-arm64.dmg](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (macOS Apple Silicon)
-
-`electron-gui/` contains a desktop app that wraps the TorchScript inference path.
-The main process spawns a Python backend (`backend.py`) and communicates with it
-via line-delimited JSON over stdio.
 
 ### GUI Features
 
