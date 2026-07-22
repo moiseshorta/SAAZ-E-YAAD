@@ -54,8 +54,7 @@ or text) consumed via cross-attention.
 ├── generate.py        # Inference with CFG, optional audio/text conditioning and prefix
 ├── export.py          # Export a trained checkpoint to a TorchScript module
 ├── generate-ts.py     # Run inference directly from an exported TorchScript model
-├── requirements.txt
-└── electron-gui/      # Desktop application (see below)
+└── requirements.txt
 ```
 
 The Python scripts are self-contained — model code lives inside `train.py` and is
