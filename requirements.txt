@@ -1,0 +1,9 @@
+torch>=2.2
+transformers>=4.38
+numpy>=1.24
+scipy>=1.10
+librosa>=0.10.0
+soundfile>=0.12.1
+tqdm>=4.66
+rich>=13.7
+music2latent @ git+https://github.com/moiseshorta/music2latent.git
