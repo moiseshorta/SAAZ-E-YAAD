@@ -6,6 +6,8 @@ An autoregressive music generation system based on Continuous Autoregressive Mod
 (CAM) with CLAP conditioning, operating over `music2latent` audio latents. The
 repository includes the training and inference pipeline plus an Electron desktop
 application for interactive generation.
+The models also run inside a DAW as a VST3 / AU / Standalone plugin for macOS
+(see below).
 
 **Download:** [Saz-e-yaad v1](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (macOS Apple Silicon)
 
@@ -158,6 +160,26 @@ The renderer provides a full-featured interface for interactive music generation
 
 The GUI is built with React and styled with modern components, providing an intuitive
 workflow for experimenting with different conditioning strategies and model configurations.
+
+## Plugin (VST3 / AU / Standalone)
+
+A JUCE port of the Electron app for use in a DAW (Ableton Live, Logic Pro, FL
+Studio, Bitwig, REAPER, ...). The interface, its behaviour and the backend
+protocol are the same; audio plays through the host, and renders can be dragged
+from the waveform or the History list straight onto a track (or into Finder).
+The (?) page credits the collaboration: AIxDESIGN x Lacuna x SEMILLA.AI Studio.
+
+- macOS 12 or later, on Apple silicon and Intel (universal binaries).
+- Offline: the frozen backend, the six models and the CLAP conditioning model
+  ship with the plugin; nothing is downloaded at run time.
+- Generation uses a KV-cached re-export of the TorchScript models (same weights,
+  about 7x faster on CPU). On Apple silicon the sampler runs on the CPU's matrix
+  units (Accelerate; stepping one frame at a time it is 4x faster there than on
+  MPS) and the decoder on the GPU (Metal), about 3x faster end to end than CPU
+  only. Intel Macs run everything on the CPU.
+- One installer (`.pkg`) with a checkbox per format (Standalone, VST3, AU),
+  pre-ticked for the DAWs it finds; the engine and models are installed once and
+  shared by every format.
 
 ## License
 
