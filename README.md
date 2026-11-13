@@ -7,7 +7,11 @@ An autoregressive music generation system based on Continuous Autoregressive Mod
 repository includes the training and inference pipeline plus an Electron desktop
 application for interactive generation.
 
-**Download:** [Saz-e-yaad v1](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (macOS Apple Silicon)
+Saaz-e-Yaad is now also a **VST3 / AU plugin** (plus a Standalone app) for macOS,
+running natively on both **Apple silicon (M-series)** and **Intel** Macs. See
+[Plugin](#plugin) below.
+
+**Download:** [Saz-e-yaad v1](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (desktop app, macOS Apple Silicon)
 
 ## Background
 
@@ -158,6 +162,18 @@ The renderer provides a full-featured interface for interactive music generation
 
 The GUI is built with React and styled with modern components, providing an intuitive
 workflow for experimenting with different conditioning strategies and model configurations.
+
+## Plugin
+
+Saaz-e-Yaad runs inside your DAW (e.g. Ableton Live, Logic Pro) as a VST3 or AU
+plugin, or on its own as a Standalone app.
+
+- macOS 12 or later, on Apple silicon (M-series) and Intel Macs.
+- On M-series Macs it uses Apple silicon acceleration (Metal GPU and Accelerate);
+  Intel Macs run on the CPU.
+- Works offline: the engine and models are installed with the plugin. One
+  installer (.pkg) lets you choose VST3, AU and/or Standalone.
+- Drag renders from the plugin straight onto a track in your DAW.
 
 ## License
 
