@@ -11,7 +11,9 @@ Saaz-e-Yaad is now also a **VST3 / AU plugin** (plus a Standalone app) for macOS
 running natively on both **Apple silicon (M-series)** and **Intel** Macs. See
 [Plugin](#plugin) below.
 
-**Download:** [Saz-e-yaad v1](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (desktop app, macOS Apple Silicon)
+**Download:**
+- [Saaz-e-Yaad 0.1.0 plugin](https://www.dropbox.com/scl/fi/b27asqcdr8qcnvrvut6sf/Saaz-e-Yaad-0.1.0-Mac.pkg?rlkey=0lr7y45w22yxtlfdffb7uf0c3&st=7xvue93o&dl=0) (VST3 / AU / Standalone installer, macOS 12+, Apple Silicon and Intel)
+- [Saz-e-yaad v1](https://www.dropbox.com/scl/fi/6kqq0tig5o70hnw5xjqcf/SONIC-SHIKARA-0.1.0-arm64.dmg?rlkey=2tbeznd3kkk51w2270xi6n1ej&st=c5kxvtpe&dl=0) (desktop app, macOS Apple Silicon)
 
 ## Background
 
